@@ -37,4 +37,5 @@ sudo cp common-password /etc/pam.d/common-password
 
 sleep 1
 
-
+echo "configuring sudoers"
+sudo cd sudoers /etc/sudoers
