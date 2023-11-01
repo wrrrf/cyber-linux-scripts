@@ -24,3 +24,9 @@ sudo apt purge -y *setoolkit*
 echo "configuring sshd"
 sudo cp ssh_config /etc/ssh/ssh_config
 sudo cp sshd_config /etc/ssh/sshd_config
+
+sleep 1
+
+echo "configuring password security"
+sudo cp login.defs /etc/login.defs
+sudo cp common-password /etc/pam.d/common-password
