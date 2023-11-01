@@ -25,8 +25,16 @@ echo "configuring sshd"
 sudo cp ssh_config /etc/ssh/ssh_config
 sudo cp sshd_config /etc/ssh/sshd_config
 
+echo "configuring ports (for ssh/sshd)"
+sudo ufw allow 42069 && echo "port 42069 opened"
+sudo ufw deny 22 && echo "port 22 closed"
+
 sleep 1
 
 echo "configuring password security"
 sudo cp login.defs /etc/login.defs
 sudo cp common-password /etc/pam.d/common-password
+
+sleep 1
+
+
