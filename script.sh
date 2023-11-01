@@ -5,21 +5,21 @@ sudo ufw enable
 
 echo "updating software(s)"
 sudo apt update
-sudo apt upgrade
+sudo apt -y upgrade
 
 echo "removing unautorized (mostly just stuff thas default to kali linux)"
-sudo apt purge *hashcat*
-sudo apt purge *telnet*
-sudo apt purge *netcat*
-sudo apt purge *wireshark*
-sudo apt purge *nmap*
-sudo apt purge *metasploit*
-sudo apt purge *sqlmap*
-sudo apt purge *lynis*
-sudo apt purge *burpsuite*
-sudo apt purge *aircrack-ng*
-sudo apt purge *autopsy*
-sudo apt purge *setoolkit*
+sudo apt purge -y *hashcat*
+sudo apt purge -y *telnet*
+sudo apt purge -y *netcat*
+sudo apt purge -y *wireshark*
+sudo apt purge -y *nmap*
+sudo apt purge -y *metasploit*
+sudo apt purge -y *sqlmap*
+sudo apt purge -y *lynis*
+sudo apt purge -y *burpsuite*
+sudo apt purge -y *aircrack-ng*
+sudo apt purge -y *autopsy*
+sudo apt purge -y *setoolkit*
 
 echo "configuring sshd"
 sudo cp ssh_config /etc/ssh/ssh_config
