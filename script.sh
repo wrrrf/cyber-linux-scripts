@@ -38,4 +38,30 @@ sudo cp common-password /etc/pam.d/common-password
 sleep 1
 
 echo "configuring sudoers"
-sudo cd sudoers /etc/sudoers
+sudo cp sudoers /etc/sudoers
+
+echo "looking for critical services (delete any not in readme)"
+dpkg -l | grep sshd
+dpkg -l | grep openvpn
+dpkg -l | grep apache
+dpkg -l | grep nginx
+dpkg -l | grep vsftpd
+dpkg -l | grep xinetd
+#dpkg -l | grep xserver
+#dpkg -l | grep cups
+#dpkg -l | grep avahi
+dpkg -l | grep slapd
+dpkg -l | grep nfs-kernel-server
+dpkg -l | grep samba
+dpkg -l | grep squid
+dpkg -l | grep snmpd
+dpkg -l | grep isc-dhcp-server
+#dpkg -l | grep bind9
+dpkg -l | grep apache2
+dpkg -l | grep dovecot
+#dpkg -l | grep rsync
+#i dont know if i need to remove all of these if not in readme; check before commiting
+echo "do sudo apt purge *[package]* to remove, only remove services not listed in the readme"
+
+
+
