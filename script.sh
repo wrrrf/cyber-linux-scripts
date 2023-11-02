@@ -62,6 +62,6 @@ dpkg -l | grep dovecot
 #dpkg -l | grep rsync
 #i dont know if i need to remove all of these if not in readme; check before commiting
 echo "do sudo apt purge *[package]* to remove, only remove services not listed in the readme"
-
+echo "there also may be some services that may not be found"
 
 
