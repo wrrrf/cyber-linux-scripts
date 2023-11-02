@@ -64,4 +64,16 @@ dpkg -l | grep dovecot
 echo "do sudo apt purge *[package]* to remove, only remove services not listed in the readme"
 echo "there also may be some services that may not be found"
 
+sleep 1
 
+echo "remove ALL mp3/mp4 files? [y/n]"
+echo "WARNING, THIS IS NOT REVERSIBLE . . . OR SOMETHING"
+ans=read
+if [ '$ans' == 'y' ]; then
+    cd / && sudo rm -rf *.mp3
+    sudo rm -rf *.mp4
+    cd ~
+    echo "removed all mp3 files"
+else
+    echo "no changes made"
+fi
