@@ -33,8 +33,8 @@ sudo cp common-password /etc/pam.d/common-password
 
 sleep 1
 
-echo "configuring sudoers"
-sudo cp sudoers /etc/sudoers
+#echo "configuring sudoers"
+#sudo cp sudoers /etc/sudoers
 
 echo "looking for critical services (delete any not in readme)"
 dpkg -l | grep sshd
