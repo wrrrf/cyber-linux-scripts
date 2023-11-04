@@ -75,10 +75,10 @@ ans=$REPLY
 if [ $ans == 'y' ]; then
     echo "removing files . . . (this may take a while)"
     cd /
-     sudo rm -rf *.mp3
-    sudo rm -rf *.mp4
+    sudo find . -name '*.mp3*' -exec rm {} \;
+    sudo find . -name '*.mp4*' -exec rm {} \;
     cd ~
-    echo "removed all mp3 files"
+    echo "removed all mp3/4 files"
 else
     echo "no changes made"
 fi
