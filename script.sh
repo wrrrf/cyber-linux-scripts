@@ -69,8 +69,10 @@ sudo apt -y upgrade
 
 echo "remove ALL mp3/mp4 files? [y/n]"
 echo "WARNING, THIS IS NOT REVERSIBLE . . . OR SOMETHING"
-ans=read
-if [ '$ans' == 'y' ]; then
+read
+ans=$REPLY
+
+if [ $ans == 'y' ]; then
     echo "removing files . . . (this may take a while)"
     cd / && sudo rm -rf *.mp3
     sudo rm -rf *.mp4
