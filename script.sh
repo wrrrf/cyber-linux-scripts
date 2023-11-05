@@ -18,14 +18,20 @@ sudo apt purge -y *autopsy*
 sudo apt purge -y *setoolkit*
 
 echo "configuring sshd"
-sudo cp ssh_config /etc/ssh/ssh_config
-sudo cp sshd_config /etc/ssh/sshd_config
+#sudo cp ssh_config /etc/ssh/ssh_config
+#sudo cp sshd_config /etc/ssh/sshd_config
+sudo sed -i -e 's/Protocol 1/Protocol 2/g' /etc/ssh/sshd_config
+sudo sed -i -e 's/Protocol 1/Protocol 2/g' /etc/ssh/ssh_config 
+sudo sed -i -e 's/RSAAuthentication yes/RSAAuthentication no/g' /etc/ssh/sshd_config 
 
 echo "configuring ports (for ssh/sshd)"
 sudo ufw allow 42069 && echo "port 42069 opened"
 sudo ufw deny 22 && echo "port 22 closed"
 
 sleep 1
+
+echo "changing /etc/shadow perms"
+sudo chmod 640 /etc/shadow
 
 echo "configuring password security"
 sudo cp login.defs /etc/login.defs
