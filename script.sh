@@ -71,7 +71,8 @@ sudo ufw deny 22 && echo "port 22 closed"
 
 sleep 1
 
-echo "changing /etc/shadow perms"
+echo "changing perms"
+sudo chmod 755 /etc
 sudo chmod 640 /etc/shadow
 
 echo "configuring password security"
