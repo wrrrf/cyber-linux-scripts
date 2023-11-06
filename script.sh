@@ -16,6 +16,19 @@ sudo apt purge -y *burpsuite*
 sudo apt purge -y *aircrack-ng*
 sudo apt purge -y *autopsy*
 sudo apt purge -y *setoolkit*
+sudo apt purge -y *irpas*
+sudo apt purge -y *zeitgeist*
+sudo apt purge -y *pdfcrack*
+sudo apt purge -y *sipcrack*
+sudo apt purge -y *pyrit*
+sudo apt purge -y *ophcrack*
+sudo apt purge -y *lcrack*
+sudo apt purge -y *rarcrack*
+sudo apt purge -y *hydra*
+sudo apt purge -y john
+sudo apt purge -y john-data
+sudo apt purge -y *fcrackzip*
+sudo apt purge -y *aircrack-ng*
 
 echo "configuring sshd"
 #sudo cp ssh_config /etc/ssh/ssh_config
@@ -74,6 +87,7 @@ sleep 1
 echo "changing perms"
 sudo chmod 755 /etc
 sudo chmod 640 /etc/shadow
+sudo chmod ~/.bash_history
 
 echo "configuring password security"
 sudo cp login.defs /etc/login.defs
