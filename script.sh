@@ -84,6 +84,10 @@ sudo ufw deny 22 && echo "port 22 closed"
 
 sleep 1
 
+echo "configuring /etc/pam.d/common-auth"
+sudo sed -i '/auth optional/d' /etc/pam.d/common-auth
+sudo echo "auth optional pam_tally.so deny=5 unlock_time=900 onerr=fail audit even_deny_root_account silent " >> /etc/pam.d/common-auth
+
 echo "changing perms"
 sudo chmod 755 /etc
 sudo chmod 640 /etc/shadow
