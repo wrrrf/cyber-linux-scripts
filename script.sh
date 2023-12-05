@@ -88,7 +88,7 @@ sudo ufw deny 22 && echo "port 22 closed"
 
 cd ~
 wget https://github.com/klaver/sysctl/blob/master/sysctl.conf
-mv sysctl.conf /etc/sysctl.conf
+sudo mv sysctl.conf /etc/sysctl.conf
 
 ###############END CONFIGS OR SOMETHING
 
