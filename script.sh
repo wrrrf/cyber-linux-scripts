@@ -109,22 +109,22 @@ echo "configuring sudoers"
 sudo cp sudoers /etc/sudoers
 
 echo "deleteing a bunch of critical services IF U LOSE POINTS JUST RE ADD THEM BACK"
-sudo apt purge sshd
-sudo apt purge openvpn
-sudo apt purge apache
-sudo apt purge nginx
-sudo apt purge vsftpd
-sudo apt purge xinetd
-#dpkg -l | grep xserver
-#dpkg -l | grep cups
-#dpkg -l | grep avahi
-sudo apt purge slapd
-sudo apt purge nfs-kernel-server
-sudo apt purge squid
-sudo apt purge isc-dhcp-server
+sudo apt purge -y sshd
+sudo apt purge -y openvpn
+sudo apt purge -y apache
+sudo apt purge -y nginx
+sudo apt purge -y vsftpd
+sudo apt purge -y xinetd
+#dpkg -l | grep -y xserver
+#dpkg -l | grep -y cups
+#dpkg -l | grep -y avahi
+sudo apt purge -y slapd
+sudo apt purge -y nfs-kernel-server
+sudo apt purge -y squid
+sudo apt purge -y isc-dhcp-server
 #dpkg -l | grep bind9
-sudo apt purge apache2
-sudo apt purge dovecot
+sudo apt purge -y apache2
+sudo apt purge -y dovecot
 #dpkg -l | grep rsync
 #i dont know if i need to remove all of these if not in readme; check before commiting
 
