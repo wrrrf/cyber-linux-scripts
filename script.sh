@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#sudo su
+
 echo "enabling firewall . . ."
 sudo ufw enable
 
@@ -29,6 +31,8 @@ sudo apt purge -y john
 sudo apt purge -y john-data
 sudo apt purge -y *fcrackzip*
 sudo apt purge -y *aircrack-ng*
+
+#######################START CONFIGS
 
 echo "configuring sshd"
 #sudo cp ssh_config /etc/ssh/ssh_config
@@ -82,11 +86,13 @@ echo "configuring ports (for ssh/sshd)"
 sudo ufw allow 42069 && echo "port 42069 opened"
 sudo ufw deny 22 && echo "port 22 closed"
 
-sleep 1
+cd ~
+wget https://github.com/klaver/sysctl/blob/master/sysctl.conf
+mv sysctl.conf /etc/sysctl.conf
 
-echo "configuring /etc/pam.d/common-auth"
-sudo sed -i '/auth optional/d' /etc/pam.d/common-auth
-sudo echo "auth optional pam_tally.so deny=5 unlock_time=900 onerr=fail audit even_deny_root_account silent " >> /etc/pam.d/common-auth
+###############END CONFIGS OR SOMETHING
+
+sleep 1
 
 echo "changing perms"
 sudo chmod 755 /etc
@@ -102,29 +108,25 @@ sleep 1
 echo "configuring sudoers"
 sudo cp sudoers /etc/sudoers
 
-echo "looking for critical services (delete any not in readme)"
-dpkg -l | grep sshd
-dpkg -l | grep openvpn
-dpkg -l | grep apache
-dpkg -l | grep nginx
-dpkg -l | grep vsftpd
-dpkg -l | grep xinetd
+echo "deleteing a bunch of critical services IF U LOSE POINTS JUST RE ADD THEM BACK"
+sudo apt purge sshd
+sudo apt purge openvpn
+sudo apt purge apache
+sudo apt purge nginx
+sudo apt purge vsftpd
+sudo apt purge xinetd
 #dpkg -l | grep xserver
 #dpkg -l | grep cups
 #dpkg -l | grep avahi
-dpkg -l | grep slapd
-dpkg -l | grep nfs-kernel-server
-dpkg -l | grep samba
-dpkg -l | grep squid
-dpkg -l | grep snmpd
-dpkg -l | grep isc-dhcp-server
+sudo apt purge slapd
+sudo apt purge nfs-kernel-server
+sudo apt purge squid
+sudo apt purge isc-dhcp-server
 #dpkg -l | grep bind9
-dpkg -l | grep apache2
-dpkg -l | grep dovecot
+sudo apt purge apache2
+sudo apt purge dovecot
 #dpkg -l | grep rsync
 #i dont know if i need to remove all of these if not in readme; check before commiting
-echo "do sudo apt purge *[package]* to remove, only remove services not listed in the readme"
-echo "there also may be some services that may not be found"
 
 sleep 1
 
