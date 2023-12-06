@@ -84,7 +84,7 @@ echo "configuring sshd"
 
 cd ~
 wget https://github.com/wrrrf/cyber-linux-script/ssh_config
-mv ssh_config /etc/ssh/ssh_config
+sudo mv ssh_config /etc/ssh/ssh_config
 
 echo "configuring ports (for ssh/sshd)"
 sudo ufw allow 42069 && echo "port 42069 opened"
