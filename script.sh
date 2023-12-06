@@ -33,50 +33,54 @@ sudo apt purge -y *aircrack-ng*
 echo "configuring sshd"
 #sudo cp ssh_config /etc/ssh/ssh_config
 #sudo cp sshd_config /etc/ssh/sshd_config
-sudo sed -i '/Protocol/d' /etc/ssh/sshd_config
-sudo sed -i '/Protocol/d' /etc/ssh/ssh_config  
+#sudo sed -i '/Protocol/d' /etc/ssh/sshd_config
+#sudo sed -i '/Protocol/d' /etc/ssh/ssh_config  
 
-sudo sed -i '/RSAAuthentication/d' /etc/ssh/ssh_config
-sudo sed -i '/RSAAuthentication/d' /etc/ssh/sshd_config
+#sudo sed -i '/RSAAuthentication/d' /etc/ssh/ssh_config
+#sudo sed -i '/RSAAuthentication/d' /etc/ssh/sshd_config
 
-sudo sed -i '/PubkeyAuthentication/d' /etc/ssh/sshd_config
-sudo sed -i '/PubkeyAuthentication/d' /etc/ssh/ssh_config
+#sudo sed -i '/PubkeyAuthentication/d' /etc/ssh/sshd_config
+#sudo sed -i '/PubkeyAuthentication/d' /etc/ssh/ssh_config
 
-sudo sed -i '/HostbasedAuthentication/d' /etc/ssh/sshd_config
-sudo sed -i '/HostbasedAuthentication/d' /etc/ssh/ssh_config
+#sudo sed -i '/HostbasedAuthentication/d' /etc/ssh/sshd_config
+#sudo sed -i '/HostbasedAuthentication/d' /etc/ssh/ssh_config
 
-sudo sed -i '/PermitEmptyPasswords/d' /etc/ssh/sshd_config
-sudo sed -i '/PermitEmptyPasswords/d' /etc/ssh/ssh_config
+#sudo sed -i '/PermitEmptyPasswords/d' /etc/ssh/sshd_config
+#sudo sed -i '/PermitEmptyPasswords/d' /etc/ssh/ssh_config
 
-sudo sed -i '/PermitRootLogin/d' /etc/ssh/sshd_config
-sudo sed -i '/PermitRootLogin/d' /etc/ssh/ssh_config
+#sudo sed -i '/PermitRootLogin/d' /etc/ssh/sshd_config
+#sudo sed -i '/PermitRootLogin/d' /etc/ssh/ssh_config
 
-sudo sed -i '/X11Forwarding/d' /etc/ssh/sshd_config
-sudo sed -i '/X11Forwarding/d' /etc/ssh/ssh_config
+#sudo sed -i '/X11Forwarding/d' /etc/ssh/sshd_config
+#sudo sed -i '/X11Forwarding/d' /etc/ssh/ssh_config
 
-sudo echo 'Protocol 2' >> /etc/ssh_config
-sudo echo 'Protocol 2' >> /etc/sshd_config
+#sudo echo 'Protocol 2' >> /etc/ssh_config
+#sudo echo 'Protocol 2' >> /etc/sshd_config
 
-sudo echo 'RSAAuthentication yes' >> /etc/ssh_config
-sudo echo 'RSAAuthentication yes' >> /etc/sshd_config
+#sudo echo 'RSAAuthentication yes' >> /etc/ssh_config
+#sudo echo 'RSAAuthentication yes' >> /etc/sshd_config
 
-sudo echo 'PubkeyAuthentication yes' >> /etc/ssh_config
-sudo echo 'PubkeyAuthentication yes' >> /etc/sshd_config
+#sudo echo 'PubkeyAuthentication yes' >> /etc/ssh_config
+#sudo echo 'PubkeyAuthentication yes' >> /etc/sshd_config
 
-sudo echo 'HostbasedAuthentication no' >> /etc/ssh_config
-sudo echo 'HostbasedAuthentication no' >> /etc/sshd_config
+#sudo echo 'HostbasedAuthentication no' >> /etc/ssh_config
+#sudo echo 'HostbasedAuthentication no' >> /etc/sshd_config
 
-sudo echo 'PasswordAuthentication no' >> /etc/ssh_config
-sudo echo 'PasswordAuthentication no' >> /etc/sshd_config
+#sudo echo 'PasswordAuthentication no' >> /etc/ssh_config
+#sudo echo 'PasswordAuthentication no' >> /etc/sshd_config
 
-sudo echo 'PermitEmptyPasswords no' >> /etc/ssh_config
-sudo echo 'PermitEmptyPasswords no' >> /etc/sshd_config
+#sudo echo 'PermitEmptyPasswords no' >> /etc/ssh_config
+#sudo echo 'PermitEmptyPasswords no' >> /etc/sshd_config
 
-sudo echo 'PermitRootLogin no' >> /etc/ssh_config
-sudo echo 'PermitRootLogin no' >> /etc/sshd_config
+#sudo echo 'PermitRootLogin no' >> /etc/ssh_config
+#sudo echo 'PermitRootLogin no' >> /etc/sshd_config
 
-sudo echo 'X11Forwarding no' >> /etc/ssh_config
-sudo echo 'X11Forwarding no' >> /etc/sshd_config
+#sudo echo 'X11Forwarding no' >> /etc/ssh_config
+#sudo echo 'X11Forwarding no' >> /etc/sshd_config
+
+cd ~
+wget https://github.com/wrrrf/cyber-linux-script/ssh_config
+mv ssh_config /etc/ssh/ssh_config
 
 echo "configuring ports (for ssh/sshd)"
 sudo ufw allow 42069 && echo "port 42069 opened"
