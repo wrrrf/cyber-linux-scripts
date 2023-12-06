@@ -1,58 +1,65 @@
+# /etc/ssh/sshd_config
 
-# This is the ssh client system-wide configuration file.  See
-# ssh_config(5) for more information.  This file provides defaults for
-# users, and the values can be changed in per-user configuration files
-# or on the command line.
+# made mostly by chat gpt haha
 
-# Configuration data is parsed as follows:
-#  1. command line options
-#  2. user-specific file
-#  3. system-wide file
-# Any configuration value is only changed the first time it is set.
-# Thus, host-specific definitions should be at the beginning of the
-# configuration file, and defaults at the end.
+# Specify the protocol versions allowed
+Protocol 2
 
-# Site-wide defaults for some commonly used options.  For a comprehensive
-# list of available options, their meanings and defaults, please see the
-# ssh_config(5) man page.
+# Disable root login
+PermitRootLogin no
 
-Include /etc/ssh/ssh_config.d/*.conf
+# Allow only specific users to log in
+AllowGroups adm sudo
 
-Host *
-#   ForwardAgent no
-#   ForwardX11 no
-#   ForwardX11Trusted yes
-#   PasswordAuthentication yes
-#   HostbasedAuthentication no
-#   GSSAPIAuthentication no
-#   GSSAPIDelegateCredentials no
-#   GSSAPIKeyExchange no
-#   GSSAPITrustDNS no
-#   BatchMode no
-#   CheckHostIP yes
-#   AddressFamily any
-#   ConnectTimeout 0
-#   StrictHostKeyChecking ask
-#   IdentityFile ~/.ssh/id_rsa
-#   IdentityFile ~/.ssh/id_dsa
-#   IdentityFile ~/.ssh/id_ecdsa
-#   IdentityFile ~/.ssh/id_ed25519
-    Port 42069
-#   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
-#   MACs hmac-md5,hmac-sha1,umac-64@openssh.com
-#   EscapeChar ~
-#   Tunnel no
-#   TunnelDevice any:any
-#   PermitLocalCommand no
-#   VisualHostKey no
-#   ProxyCommand ssh -q -W %h:%p gateway.example.com
-#   RekeyLimit 1G 1h
-#   UserKnownHostsFile ~/.ssh/known_hosts.d/%k
-    SendEnv LANG LC_*
-    HashKnownHosts yes
-    GSSAPIAuthentication yes
-    RSAAuthentication yes
-    PubkeyAuthentication yes
-    HostbasedAuthentication no
-    PasswordAuthentication no
-    PermitEmptyPasswords no
+# Set the port to a custom, non-default value
+Port 42069
+
+# Disable password-based authentication
+PasswordAuthentication no
+
+# Use public key authentication
+PubkeyAuthentication yes
+
+# Allow only specific authentication methods
+AuthenticationMethods publickey
+
+# Limit the number of concurrent connections
+MaxSessions 2
+MaxStartups 2:30:10
+
+# Set a timeout for idle sessions
+ClientAliveInterval 300
+ClientAliveCountMax 2
+
+# Disable X11 forwarding
+X11Forwarding no
+
+# Set the banner to display a warning message
+Banner /etc/issue.net
+
+# Allow only specific ciphers and MACs
+Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512,hmac-sha2-256
+
+# Use a strong Kex algorithm
+KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+
+# Disable unused authentication methods
+HostbasedAuthentication no
+RSAAuthentication yes
+IgnoreUserKnownHosts yes
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+
+# Enable additional logging
+LogLevel VERBOSE
+
+# Disable unnecessary features
+UseDNS no
+AllowTcpForwarding no
+GatewayPorts no
+
+# Set a chroot directory for SFTP
+Subsystem sftp internal-sftp
+ChrootDirectory /path/to/sftp/chroot
