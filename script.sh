@@ -84,12 +84,19 @@ echo "configuring sshd"
 
 cd ~
 wget https://github.com/wrrrf/cyber-linux-script/ssh_config
-sudo mv ssh_config /etc/ssh/ssh_config
+sudo cp ssh_config /etc/ssh/ssh_config
+sudo cp ssh_config /etc/ssh/sshd_config
 
 echo "configuring ports (for ssh/sshd)"
 sudo ufw allow 42069 && echo "port 42069 opened"
 sudo ufw deny 22 && echo "port 22 closed"
 
+#pam configs
+cd ~
+wget https://github.com/wrrrf/cyber-linux-scripts/common-password
+sudo mv common-password /etc/pam.d/common-password
+
+#config sysctl.conf
 cd ~
 wget https://github.com/klaver/sysctl/blob/master/sysctl.conf
 sudo mv sysctl.conf /etc/sysctl.conf
@@ -101,7 +108,7 @@ sleep 1
 echo "changing perms"
 sudo chmod 755 /etc
 sudo chmod 640 /etc/shadow
-sudo chmod ~/.bash_history
+#sudo chmod ~/.bash_history
 
 echo "configuring password security"
 sudo cp login.defs /etc/login.defs
