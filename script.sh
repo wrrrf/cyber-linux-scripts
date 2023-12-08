@@ -84,8 +84,8 @@ echo "configuring sshd"
 
 cd ~
 wget https://github.com/wrrrf/cyber-linux-script/ssh_config
-sudo cp ssh_config /etc/ssh/ssh_config
-sudo cp ssh_config /etc/ssh/sshd_config
+sudo cp -y ssh_config /etc/ssh/ssh_config
+sudo cp -y ssh_config /etc/ssh/sshd_config
 
 echo "configuring ports (for ssh/sshd)"
 sudo ufw allow 42069 && echo "port 42069 opened"
@@ -93,12 +93,12 @@ sudo ufw deny 22 && echo "port 22 closed"
 
 #pam configs
 cd ~
-wget https://github.com/wrrrf/cyber-linux-scripts/common-password
+wget https://raw.githubusercontent.com/wrrrf/cyber-linux-scripts/main/common-password
 sudo mv common-password /etc/pam.d/common-password
 
 #config sysctl.conf
 cd ~
-wget https://github.com/klaver/sysctl/blob/master/sysctl.conf
+wget https://raw.githubusercontent.com/klaver/sysctl/master/sysctl.conf
 sudo mv sysctl.conf /etc/sysctl.conf
 
 ###############END CONFIGS OR SOMETHING

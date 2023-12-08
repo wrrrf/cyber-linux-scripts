@@ -1,0 +1,234 @@
+#------------------------------------------------------------------------------#
+#                   OFFICIAL DEBIAN REPOS                    
+#------------------------------------------------------------------------------#
+
+###### Debian Main Repos
+deb http://deb.debian.org/debian/ stable main contrib non-free
+deb-src http://deb.debian.org/debian/ stable main contrib non-free
+
+deb http://deb.debian.org/debian/ stable-updates main contrib non-free
+deb-src http://deb.debian.org/debian/ stable-updates main contrib non-free
+
+deb http://deb.debian.org/debian-security stable/updates main
+deb-src http://deb.debian.org/debian-security stable/updates main
+
+deb http://ftp.debian.org/debian buster-backports main
+deb-src http://ftp.debian.org/debian buster-backports main
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Adapta GTK Theme
+deb http://ppa.launchpad.net/tista/adapta/ubuntu bionic main
+deb-src http://ppa.launchpad.net/tista/adapta/ubuntu bionic main
+
+###Atom Editor
+deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
+
+###Audacity
+deb http://ppa.launchpad.net/ubuntuhandbook1/audacity/ubuntu bionic main
+deb-src http://ppa.launchpad.net/ubuntuhandbook1/audacity/ubuntu bionic main 
+
+###Benno MailArchiv
+deb http://www.benno-mailarchiv.de/download/debian /
+
+###BIRD Internet Routing Daemon
+deb http://bird.network.cz/debian/ stretch main
+
+###Debian Multimedia
+deb [arch=amd64,i386] https://www.deb-multimedia.org buster main non-free
+
+###Dino
+deb [arch=amd64,i386] http://download.opensuse.org/repositories/network:/messaging:/xmpp:/dino/Debian_10/ /
+
+###Docker CE
+deb [arch=amd64] https://download.docker.com/linux/debian buster stable
+
+###Dovecot
+deb https://repo.dovecot.org/ce-2.3-latest/debian/buster buster main
+
+###Dropbox
+deb http://linux.dropbox.com/debian buster main
+
+###Enpass Password Manager
+deb http://repo.sinew.in/ stable main
+
+###Esmska
+deb http://download.opensuse.org/repositories/Java:/esmska/common-deb/ ./
+
+###Froxlor
+deb http://debian.froxlor.org stable main
+
+###Ghostwriter
+deb http://ppa.launchpad.net/wereturtle/ppa/ubuntu bionic main 
+deb-src http://ppa.launchpad.net/wereturtle/ppa/ubuntu bionic main
+
+###GNS3
+deb http://ppa.launchpad.net/gns3/ppa/ubuntu bionic main
+
+deb-src http://ppa.launchpad.net/gns3/ppa/ubuntu xenial main
+
+###Google Chrome Browser
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+
+###Google Earth
+deb [arch=amd64] http://dl.google.com/linux/earth/deb/ stable main
+
+###GoPass
+deb https://dl.bintray.com/gopasspw/gopass bionic main
+
+###Icon Repo
+deb http://ppa.launchpad.net/noobslab/icons/ubuntu bionic main
+deb-src http://ppa.launchpad.net/noobslab/icons/ubuntu artful main
+
+###Jabber.at ejabberd Repo
+deb [arch=i386,amd64] https://apt.jabber.at buster ejabberd
+
+###Jabber.at gajim Repo
+deb [arch=i386,amd64] https://apt.jabber.at buster gajim
+
+###Jabber.at mcabber Repo
+deb [arch=i386,amd64] https://apt.jabber.at buster mcabber
+
+###Liveconfig
+deb http://repo.liveconfig.com/debian/ main main
+
+###Liveconfig PHP Repo
+deb http://repo.liveconfig.com/debian/ stretch php
+
+###LLVM + Clang + compiler-rt + polly + LLDB + LLD + libFuzzer + libc++ + libc++abi + openmp
+deb http://apt.llvm.org/stretch/ llvm-toolchain-buster main
+deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch main
+
+###Lynis
+deb https://packages.cisofy.com/community/lynis/deb/ buster main
+
+###MariaDB
+deb [arch=i386,amd64] http://mirror.23media.de/mariadb/repo/10.2/debian stretch main
+deb-src [arch=i386,amd64] http://mirror.23media.de/mariadb/repo/10.2/debian stretch main
+
+###MEGA Sync Client
+deb http://mega.nz/linux/MEGAsync/Debian_10.0/ ./
+
+###muCommander
+deb http://apt.mucommander.com stable main non-free contrib
+
+###Nextcloud Client
+deb [arch=amd64,i386] http://download.opensuse.org/repositories/home:/ivaradi/Debian_10.0/ /
+
+###nginx
+deb [arch=amd64,i386] http://nginx.org/packages/debian/ buster nginx
+deb-src [arch=amd64,i386] http://nginx.org/packages/debian/ stretch nginx
+
+###NodeJs
+deb https://deb.nodesource.com/node_12.x buster main
+deb-src https://deb.nodesource.com/node_12.x buster main
+
+###Open Shot
+deb http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic main 
+
+deb-src http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic main 
+
+###openmediavault
+deb http://packages.openmediavault.org/public erasmus main
+deb-src http://packages.openmediavault.org/public erasmus main
+
+###Opera
+deb [arch=amd64,i386] https://deb.opera.com/opera-stable/ stable non-free
+
+###ownCloud Client
+deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Debian_10.0/ /
+
+###Pantheon Desktop
+deb [arch=amd64] http://gandalfn.ovh/debian buster-juno main contrib
+
+###Paper GTK Theme
+deb http://ppa.launchpad.net/snwh/pulp/ubuntu bionic main
+deb-src http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety main
+
+###Papirus GTK Theme
+deb http://ppa.launchpad.net/papirus/papirus/ubuntu bionic main 
+deb-src http://ppa.launchpad.net/papirus/papirus/ubuntu bionic main 
+
+###PHP
+deb https://packages.sury.org/php/ buster main
+
+###PostgreSQL
+deb [arch=amd64,i386] http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
+
+###Prosody
+deb http://packages.prosody.im/debian buster main
+
+###Proxmox
+deb [arch=amd64] http://download.proxmox.com/debian buster pve-no-subscription
+
+###Resilio Sync
+deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free
+
+###Riot.im
+deb https://packages.riot.im/debian/ buster main
+
+###Signal Desktop
+deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main
+
+###Skype
+deb [arch=amd64] https://repo.skype.com/deb stable main
+
+###Slack Desktop
+deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
+
+###Spotify
+deb http://repository.spotify.com stable non-free
+
+###Steam
+deb [arch=i386,amd64] http://repo.steampowered.com/steam/ precise steam
+
+###Sublime Text
+deb https://download.sublimetext.com/ apt/stable/
+
+###Teamviewer
+deb http://linux.teamviewer.com/deb stable main
+
+###Toot - a Mastodon CLI client
+deb http://bezdomni.net/packages/ ./
+
+###TOR
+deb [arch=i386,amd64,armel,armhf] http://deb.torproject.org/torproject.org stable main
+deb-src [arch=i386,amd64,armel,armhf] http://deb.torproject.org/torproject.org stable main
+
+###Typora
+deb https://typora.io/linux ./
+
+###Ubuntuzilla
+deb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main
+
+###Vagrant
+deb https://vagrant-deb.linestarve.com/ any main
+
+###video-dl
+deb http://repo.daniil.it lenny main
+
+###Virtualbox
+deb [arch=i386,amd64] http://download.virtualbox.org/virtualbox/debian buster contrib
+
+###Visual Studio Code
+deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+
+###Vivaldi Browser
+deb [arch=i386,amd64] http://repo.vivaldi.com/stable/deb/ stable main
+
+###Webmin
+deb http://download.webmin.com/download/repository sarge contrib
+
+###Weechat
+deb https://weechat.org/debian buster main
+deb-src https://weechat.org/debian stretch main
+
+###Wine
+deb [arch=i386] https://dl.winehq.org/wine-builds/debian/ buster main
+
+###yarn
+deb https://dl.yarnpkg.com/debian/ stable main
+
