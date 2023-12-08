@@ -83,9 +83,9 @@ echo "configuring sshd"
 #sudo echo 'X11Forwarding no' >> /etc/sshd_config
 
 cd ~
-wget https://github.com/wrrrf/cyber-linux-script/ssh_config
-sudo cp -y ssh_config /etc/ssh/ssh_config
+wget https://raw.githubusercontent.com/wrrrf/cyber-linux-scripts/main/ssh_config
 sudo cp -y ssh_config /etc/ssh/sshd_config
+sudo mv -y ssh_config /etc/ssh/ssh_config
 
 echo "configuring ports (for ssh/sshd)"
 sudo ufw allow 42069 && echo "port 42069 opened"
