@@ -101,6 +101,9 @@ cd ~
 wget https://raw.githubusercontent.com/klaver/sysctl/master/sysctl.conf
 sudo mv sysctl.conf /etc/sysctl.conf
 
+wget https://raw.githubusercontent.com/wrrrf/cyber-linux-scripts/main/sudoers
+sudo mv -y sudoers /etc/sudoers
+
 ###############END CONFIGS OR SOMETHING
 
 sleep 1
