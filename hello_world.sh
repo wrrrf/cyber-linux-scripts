@@ -1,1 +1,3 @@
-sed -i 's/bruh/eeee/g' hello.txt
+a=$(uname -a)
+
+echo "$a"

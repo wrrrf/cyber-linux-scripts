@@ -2,7 +2,41 @@
 
 #sudo su
 
+version=$(uname -a)
+
+version_error=""
+
+#wget 
+
+if [ $version == *Debian* ]; then
+    deb_version=$(lsb_release -d)
+    if [ $deb_version == *stretch* ]; then
+        cp ./slist/deb_stretch_sources.list /etc/apt/sources.list
+
+    elif [ $deb_version == *buster* ]; then
+        cp ./slist/deb_buster_sources.list /etc/apt/sources.list
+
+    elif [ $deb_version == *bullseye* ]; then
+        cp ./slist/deb_bullseye_sources.list /etc/apt/sources.list
+
+    elif [ $deb_verion == *sid* ]; then
+        cp ./slist/deb_sid_sourceslist /etc/apt/sources.list
+
+    else
+       $version_error="ERROR: VERSION NOT FOUND"
+    fi
+
+elif [ $version == *Ubuntu* ]; then
+    if [ $version == *22.04* ]; then
+        cp ./slist/ubuntu_2204_sources.list /etc/apt/sources.list
+    elif [ $version == *20.04* ]; then
+        cp ./slist/ubuntu_2004_sources.list /etc/apt/sources.list
+    fi
+
+fi
+
 echo "enabling firewall . . ."
+sudo apt install ufw
 sudo ufw enable
 
 echo "removing unautorized (mostly just stuff thas default to kali linux)"
